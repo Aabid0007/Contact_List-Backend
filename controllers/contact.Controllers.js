@@ -17,7 +17,7 @@ const getContactsEndpoint = asyncHandler(async (req, res) => {
     res.status(200).json({ contacts, totalPages });
   } catch (error) {
     console.error(`Error in fetching contacts: ${error.message}`);
-    res.status(500).json({ error: error.message }); // Provide more detailed error message
+    res.status(500).json({ error: error.message }); 
   }
 });
 
@@ -25,6 +25,7 @@ const getContactsEndpoint = asyncHandler(async (req, res) => {
 // create new contact
 // api/contacts
 const createContact = asyncHandler(async (req, res) => {
+  
   upload(req, res, async function (err) {
     if (err instanceof multer.MulterError) {
       res.status(400).json({ message: "image upload error" });
