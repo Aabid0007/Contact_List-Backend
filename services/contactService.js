@@ -88,9 +88,6 @@ const updateContact = async (id, updateData, newImagePath) => {
 };
 
 
-
-
-
 // delete contact
 const deleteContact = async (id) => {
     const contact = await Contact.findById(id);
