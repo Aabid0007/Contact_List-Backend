@@ -91,7 +91,7 @@ const updateContact = asyncHandler(async (req, res) => {
     };
 
     const updatedData = await contactService.updateContact(req.params.id, updateData, imagePath);
-
+    
     res.status(200).json(updatedData);
   });
 });
