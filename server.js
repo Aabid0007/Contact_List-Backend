@@ -7,15 +7,25 @@ const cros = require("cors")
 
 connectDb();
 const app = express();
-app.use(cros());
-const port = process.env.PORT ||3000;
 
+const allowedOrigins = ["http://localhost:3000", "https://contact-list-backend-1jwz.onrender.com"];
+app.use(cors({
+    origin: allowedOrigins,
+    credentials: true,
+}));
+
+const port = process.env.PORT ||3000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use("/uploads", express.static(path.resolve(__dirname, 'uploads')));
 
 app.use("/api/contacts", require("./routes/contactsRoutes"))
+
+app.use(express.static(path.join(__dirname, 'build')));
+app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "build", "index.html"));
+})
 
 app.use(errorHandler);
 
