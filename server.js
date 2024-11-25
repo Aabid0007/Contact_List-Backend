@@ -3,7 +3,7 @@ const errorHandler = require("./middleware/errorHandler");
 const connectDb = require("./config/dbConnection");
 const dotenv =require("dotenv").config();
 const path = require("path");
-const cros = require("cors")
+const cors = require("cors")
 
 connectDb();
 const app = express();
