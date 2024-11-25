@@ -30,6 +30,7 @@ app.get("/", (req, res) => {
     res.send("Backend is working!");
 });
 
+
 app.use(errorHandler);
 
 app.listen(port, '0.0.0.0', () => {
