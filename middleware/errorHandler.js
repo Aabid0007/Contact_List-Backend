@@ -9,31 +9,35 @@ const errorHandler = (err, req, res, next) => {
         message: err.message,
         statusCode: err.stack,
       });
-      break;
+      return;
     case constants.NOT_FOUND:
       res.json({
         title: "Not Found",
         message: err.message,
         statusCode: err.stack,
       });
+      return;
     case constants.UNAUTHORIZED:
       res.json({
         title: "Un  authorized",
         message: err.message,
         statusCode: err.stack,
       });
+      return;
     case constants.FORBIDDEN:
       res.json({
         title: "Forbidden",
         message: err.message,
         statusCode: err.stack,
       });
+      return;
     case constants.SERVER_ERROR:
       res.json({
         title: "Server Error",
         message: err.message,
         statusCode: err.stack,
       });
+      return;
     default:
       console.log("NO Error, All good !");
       break;
