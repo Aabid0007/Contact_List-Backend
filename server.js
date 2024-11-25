@@ -13,8 +13,7 @@ app.use(cors({
     origin: allowedOrigins,
     credentials: true,
 }));
-
-const port = process.env.PORT || 3001; 
+const port = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -25,9 +24,6 @@ app.use("/api/contacts", require("./routes/contactsRoutes"))
 app.use(express.static(path.join(__dirname, 'dist')));
 app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "dist", "index.html"));
-});
-app.get("/", (req, res) => {
-    res.send("Backend is working!");
 });
 
 
