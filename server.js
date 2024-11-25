@@ -14,7 +14,7 @@ app.use(cors({
     credentials: true,
 }));
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -25,10 +25,10 @@ app.use("/api/contacts", require("./routes/contactsRoutes"))
 app.use(express.static(path.join(__dirname, 'dist')));
 app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "dist", "index.html"));
-})
+});
 
 app.use(errorHandler);
 
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', () => {
     console.log(`Server running on port ${port}`);
 });
