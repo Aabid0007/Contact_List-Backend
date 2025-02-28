@@ -13,6 +13,7 @@ app.use(cors({
     origin: allowedOrigins,
     credentials: true,
 }));
+
 const port = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: true }));

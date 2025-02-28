@@ -8,7 +8,7 @@
     "start": "node server.js",
     "dev": "nodemon server.js"
   },
-  "author": "Zainul Abid",
+  "author": "ZainulAbid",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",
