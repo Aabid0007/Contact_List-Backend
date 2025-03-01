@@ -23,10 +23,10 @@ app.use("/uploads", express.static(path.resolve(__dirname, 'uploads')));
 
 app.use("/api/contacts", require("./routes/contactsRoutes"))
 
-app.use(express.static(path.join(__dirname, 'dist')));
-app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "dist", "index.html"));
-});
+// app.use(express.static(path.join(__dirname, 'dist')));
+// app.get("*", (req, res) => {
+//     res.sendFile(path.resolve(__dirname, "dist", "index.html"));
+// });
 
 
 app.use(errorHandler);
