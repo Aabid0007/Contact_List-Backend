@@ -21,16 +21,8 @@ const port = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use("/uploads", express.static(path.resolve(__dirname, 'uploads')));
-
 app.use("/api/contacts", require("./routes/contactsRoutes"))
 
-// app.use(express.static(path.join(__dirname, 'dist')));
-// app.get("*", (req, res) => {
-//     res.sendFile(path.resolve(__dirname, "dist", "index.html"));
-// });
-app.get("/", (req, res) => {
-    res.send("Backend is live and working!");
-});
 
 
 app.use(errorHandler);
