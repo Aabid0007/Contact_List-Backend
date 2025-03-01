@@ -8,12 +8,10 @@ const cors = require("cors")
 connectDb();
 const app = express();
 
-const allowedOrigins = ["https://contact-list-frontend.onrender.com"];
-app.use(cors({
-    origin: "*",
-   
-}));
-
+// app.use(cors({
+//     origin: '*',
+    
+// }));
 
 const port = process.env.PORT || 3000;
 
