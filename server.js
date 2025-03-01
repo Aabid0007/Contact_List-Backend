@@ -14,7 +14,7 @@ app.use(cors({
     credentials: true,
 }));
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -30,6 +30,6 @@ app.get("*", (req, res) => {
 
 app.use(errorHandler);
 
-app.listen(port, '0.0.0.0', () => {
+app.listen(port, "0.0.0.0", () => {
     console.log(`Server running on port ${port}`);
-});
+  });
