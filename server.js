@@ -11,12 +11,11 @@ const app = express();
 const allowedOrigins = ["https://contact-list-frontend.onrender.com"];
 app.use(cors({
     origin: "*",
-    
+   
 }));
 
 
-const port = 10000;
-
+const port = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
