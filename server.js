@@ -10,9 +10,10 @@ const app = express();
 
 const allowedOrigins = ["https://contact-list-frontend.onrender.com"];
 app.use(cors({
-    origin: allowedOrigins,
+    origin: "*",
     credentials: true,
 }));
+
 
 const port = process.env.PORT || 3000;
 
