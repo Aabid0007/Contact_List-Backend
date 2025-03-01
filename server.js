@@ -8,10 +8,13 @@ const cors = require("cors")
 connectDb();
 const app = express();
 
-// app.use(cors({
-//     origin: '*',
-    
-// }));
+const allowedOrigins = ["https://contact-list-frontend.onrender.com"];
+
+app.use(cors({
+    origin: allowedOrigins,
+    credentials: true,
+}));
+
 
 const port = process.env.PORT || 3000;
 
@@ -25,6 +28,9 @@ app.use("/api/contacts", require("./routes/contactsRoutes"))
 // app.get("*", (req, res) => {
 //     res.sendFile(path.resolve(__dirname, "dist", "index.html"));
 // });
+app.get("/", (req, res) => {
+    res.send("Backend is live and working!");
+});
 
 
 app.use(errorHandler);
